@@ -101,7 +101,31 @@ Password:
 230 Login successful.
 Remote system type is UNIX.
 Using binary mode to transfer files.
-ftp> 
+ftp> ls
+
+after entering into the ftp console to view any files are accessible, ls(list) files is the command
+
+which directed me to a file named hint.txt which is text file
+
+**ftp> get hint.txt
+
+get is the command to transfer the file from the ftp to the kali file system
+
+**ftp> exit-to exit out of the ftp port
+
+***cd Downloads
+
+cd is the command to change directories..From the rood or home directory it chanded to the Downloads directory where the file hint.txt from the ftp will be transferd.
+
+***cat hint.txt
+
+cat command is to view the contents in the file and it also displays the file content in the terminal
+
+hint.txt file which actually had the information about the username to the target machine
+
+The anopther port which is 80 hhtp which is open version apache server can be accessible from the browser from where i will be creating the wordlist for the password
+
+***hydra -l
 
 
 
