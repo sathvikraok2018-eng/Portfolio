@@ -72,6 +72,40 @@ https://nmap.org/nsedoc/scripts/ftp-anon.html
 
 ***nmap <target ip> --script /usr/share/nmap/scripts/ftp-anon.nse -p 21
 
+!!OUTPUT-
+
+Nmap scan report 
+Host is up (0.0015s latency).
+
+PORT   STATE SERVICE
+21/tcp open  ftp
+|_ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| vftpd 3.0.3 directory listing:
+| -rw-r--r--    1 0        0            1024 Jan 12 14:22 confidential.txt
+|_drwxr-xr-x    2 0        0            4096 Feb 18 09:15 pub
+
+
+***FTP <targetip>
+
+
+this commands allows me to connect to the ftp port if anonymous login is allowed.After using previous command, got to know that there is anonymous login
+Here to login to the ftp the username can be ftp or anonymous and the password does not matter if it is empty.
+
+!!OUTPUT
+
+Connected to 
+220 (vsFTPd 3.0.3)
+Name (192.168.1.50:user): anonymous
+331 Please specify the password.
+Password: 
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> 
+
+
+
+
   
 
 
