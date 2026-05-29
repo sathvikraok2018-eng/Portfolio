@@ -131,7 +131,9 @@ Cewl is the command used to extract words from the webpage hosted in the client 
 
 w- this flag is to mention the path where the wordlist is stored
 
-As the username is identified from the earlier command and the wordlist has created for the password now its time to crack the password by BRUTE FORCING.   the command used is HYDRA which will initiate scanning by trying different combination of password wordlist with the specified wordlist.
+As the username is identified from the earlier command and the wordlist has created for the password now its time to crack the password by BRUTE FORCING.  
+
+the command used is HYDRA which will initiate scanning by trying different combination of password wordlist with the specified wordlist.
 
 
 
