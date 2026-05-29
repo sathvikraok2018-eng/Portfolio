@@ -36,22 +36,39 @@ grep-It is used to filter out the specific search for our requirement i.e ftp sc
 !!OUTPUT- This command help me filter out script engines that is relatred to FTP OR SSH which are open
 
 /usr/share/nmap/scripts/ftp-vuln-cve2010-4221.nse
+
 /usr/share/nmap/scripts/ftp-bounce.nse
+
 /usr/share/nmap/scripts/ftp-brute.nse
+
 /usr/share/nmap/scripts/ftp-vsftpd-backdoor.nse
+
 /usr/share/nmap/scripts/ftp-syst.nse
+
 /usr/share/nmap/scripts/ftp-libopie.nse
+
 /usr/share/nmap/scripts/ftp-anon.nse
+
 /usr/share/nmap/scripts/tftp-version.nse
+
 /usr/share/nmap/scripts/tftp-enum.nse
+
 /usr/share/nmap/scripts/ftp-proftpd-backdoor.nse
+
 /usr/share/nmap/scripts/ssh-publickey-acceptance.nse
+
 /usr/share/nmap/scripts/ssh-auth-methods.nse
+
 /usr/share/nmap/scripts/sshv1.nse
+
 /usr/share/nmap/scripts/ssh2-enum-algos.nse
+
 /usr/share/nmap/scripts/ssh-hostkey.nse
+
 /usr/share/nmap/scripts/ssh-run.nse
+
 /usr/share/nmap/scripts/ssh-brute.nse
+
 
 ***nmap <target ip> --script-help /usr/share/nmap/scripts/ftp-anon.nse
 
