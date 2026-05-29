@@ -125,8 +125,14 @@ hint.txt file which actually had the information about the username to the targe
 
 The anopther port which is 80 hhtp which is open version apache server can be accessible from the browser from where i will be creating the wordlist for the password
 
-***hydra -l
+***cewl https://example.com -w wordlist.txt
 
+Cewl is the command used to extract words from the webpage hosted in the client network and then it will be stored in a file which is named as wordlist.txt 
+
+w- this flag is to mention the path where the wordlist is stored
+
+As the username is identified from the earlier command and the wordlist has created for the password now its time to crack the password by BRUTE FORCING 
+*and the command used is HYDRA which will initiate scanning by trying different combination of password wordlist with the specified wordlist.
 
 
 
