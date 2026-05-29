@@ -78,6 +78,7 @@ this command gives information aout what this script will be performing if it is
 ftp-anon.nse means this script finds if there is any or ftp allows ANONYMOUS login without any password
 
 OUTPUT:
+
 ftp-anon
 Categories: default auth safe
 https://nmap.org/nsedoc/scripts/ftp-anon.html
